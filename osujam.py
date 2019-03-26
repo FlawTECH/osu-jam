@@ -4,9 +4,10 @@ import os
 from shutil import copyfile
 
 parser = argparse.ArgumentParser(description='Extracts songs from the game osu! and copies them over to your preferred folder.')
-parser.add_argument('-o', '--osu-src', help='root folder in which osu! is installed', required=True)
-parser.add_argument('-d', '--dest', help='folder in which the files will be copied into', required=True)
+parser.add_argument('osu_src', help='root folder in which osu! is installed')
+parser.add_argument('dest', help='folder in which the files will be copied into')
 args = parser.parse_args()
+print(args)
 
 # get full path to audio file of song
 def get_audio_path(song_dir):
